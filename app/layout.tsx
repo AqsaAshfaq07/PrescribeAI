@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Link from 'next/link'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,7 +17,41 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+
+      <body className={inter.className}>
+      <nav className="flex flex-row items-center justify-between p-2 pl-6 pr-6 text-center bg-gradient-to-r from-blue-300 to-blue-700 text-white font-bold">
+      <a href="/" className="text-xl font-bold bg-blue-600 bg-clip-text text-blue"><span className="neon-effect text-2xl">PrescribeAI</span></a>
+          <div className="nav-links" id="navLinks">
+            <ul className="flex space-x-4 md:space-x-6">
+                <Link href='/course' className="group">
+                    <li className="p-2 rounded hover:bg-blue-800 transition duration-300 ease-in-out transform hover:-translate-y-1">
+                        Services
+                    </li>
+                </Link>
+                <Link href='/blog' className="group">
+                    <li className="p-2 rounded hover:bg-blue-800 transition duration-300 ease-in-out transform hover:-translate-y-1">
+                        Blog
+                    </li>
+                </Link>
+                <Link href='/about' className="group">
+                    <li className="p-2 rounded hover:bg-blue-800 transition duration-300 ease-in-out transform hover:-translate-y-1">
+                        About
+                    </li>
+                </Link>   
+                <Link href='/contact' className="group">
+                    <li className="p-2 rounded hover:bg-blue-800 transition duration-300 ease-in-out transform hover:-translate-y-1">
+                        Contact
+                    </li>
+                </Link>
+            </ul>
+          </div>
+      </nav>
+
+        {children}
+        <footer className="bg-blue-600 text-white text-center p-4 mt-6 w-full">
+        <p>© 2023 Medical Prescription Website - All rights reserved</p>
+    </footer>
+        </body>
     </html>
   )
 }

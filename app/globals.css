@@ -25,3 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.neon-effect{
+  text-shadow: 0 0 10px #f6f9f9, 0 0 20px #f7fafb, 0 0 30px #f5f8f9, 0 0 40px #f0f5f7, 0 0 70px #0d5869, 0 0 80px #00d1ff, 0 0 100px #00d1ff, 0 0 150px #00d1ff;
+}
